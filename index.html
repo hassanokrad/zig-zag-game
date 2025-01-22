@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZigZag Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div class="ui-overlay">
+        <button class="theme-button" id="themeButton">Change Theme</button>
+        <div id="scoreDisplay" class="score-display" style="display: none;">
+            <h2>Score: <span id="currentScore">0</span></h2>
+        </div>
+        <div id="menuScreen" class="menu-screen">
+            <h1>ZigZag Game</h1>
+            <p>Click to change direction. Don't fall off!</p>
+            <p>High Score: <span id="menuHighScore">0</span></p>
+            
+            <!-- Add volume controls -->
+            <div class="volume-controls">
+                <div class="volume-control">
+                    <label for="musicVolume">Music:</label>
+                    <input type="range" id="musicVolume" min="0" max="1" step="0.1">
+                </div>
+                <div class="volume-control">
+                    <label for="sfxVolume">Sound FX:</label>
+                    <input type="range" id="sfxVolume" min="0" max="1" step="0.1">
+                </div>
+            </div>
+            
+            <button id="startButton">Start Game</button>
+        </div>
+        <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+            <h2>Game Over!</h2>
+            <p>Score: <span id="finalScore">0</span></p>
+            <p>High Score: <span id="gameOverHighScore">0</span></p>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+
+    <script src="sound.js"></script>
+    <script src="themes.js"></script>
+    <script src="colors.js"></script>
+    <script src="player.js"></script>
+    <script src="rectangle.js"></script>
+    <script src="track.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
