@@ -12,6 +12,16 @@ class SoundManager {
         this.backgroundMusic.volume = this.musicVolume;
         this.clickSound.volume = this.sfxVolume;
     }
+// Add these methods
+pauseBackgroundMusic() {
+    this.backgroundMusic.pause();
+}
+
+resumeBackgroundMusic() {
+    if (this.backgroundMusic.paused) {
+        this.backgroundMusic.play().catch(() => { });
+    }
+}
 
     setMusicVolume(volume) {
         this.musicVolume = volume;
@@ -26,9 +36,11 @@ class SoundManager {
     }
 
     playBackgroundMusic() {
-        this.backgroundMusic.currentTime = 0;
-        this.backgroundMusic.play().catch(() => { });
-    }
+        if (this.backgroundMusic.paused) {
+            this.backgroundMusic.currentTime = 0;
+            this.backgroundMusic.play().catch(() => { });
+        }
+        }
 
     stopBackgroundMusic() {
         this.backgroundMusic.pause();

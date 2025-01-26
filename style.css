@@ -95,3 +95,7 @@ button:hover {
     cursor: pointer;
     border: none;
 }
+.slow-mode-overlay {
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) saturate(1.5);
+}
